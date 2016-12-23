@@ -1,13 +1,20 @@
 {
-  "name": "rollup",
-  "version": "1.0.0",
-  "description": "",
+  "name": "validate-form",
+  "version": "0.0.1",
+  "description": "Validate form",
+	"author": "alexeyvax",
+	"license": "MIT",
+  "homepage": "https://github.com/alexeyvax/example-validate-form",
   "main": "public/index.js",
   "scripts": {
     "start": "gulp"
   },
-  "author": "alexeyvax",
-  "license": "ISC",
+	  "keywords": [
+    "validate-form",
+    "patterns strategy",
+		"rollup",
+		"ES6"
+  ],
   "devDependencies": {
     "babel-preset-es2015-rollup": "^1.2.0",
     "gulp-rollup": "^1.8.0",
