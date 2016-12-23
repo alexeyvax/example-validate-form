@@ -1,0 +1,5 @@
+/nbproject/private/
+/bower_components/
+node_modules
+
+.editorconfig

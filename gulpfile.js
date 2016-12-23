@@ -10,18 +10,18 @@ gulp.task( 'rollup', () =>
   ])
   .pipe( sourcemaps.init() )
   .pipe( rollup({
-    format: 'iife',
-    moduleName: 'libraryname',
-    sourceMap: true,
+    allowRealFiles: true,
+    entry: './scripts/index.js',
     plugins: [
       babel({
-        exclude: 'node_modules/**',
-        presets: 'es2015-rollup'
+        presets: ['es2015-rollup'],
+        babelrc: false
       }),
-    ]
+    ],
+    format: 'iife'
   }))
   .pipe( sourcemaps.write('.') )
-  .pipe( gulp.dest( 'dist/' ) )
+  .pipe( gulp.dest( 'public/' ) )
 })
 
 gulp.task( 'watch', () =>
