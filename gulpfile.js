@@ -1,6 +1,8 @@
 const gulp = require( 'gulp' ),
     sourcemaps = require( 'gulp-sourcemaps' ),
     babel = require( 'rollup-plugin-babel' ),
+    uglify = require( 'gulp-uglify' ),
+		rename = require( 'gulp-rename' ),
     rollup = require( 'gulp-rollup' );
 
 gulp.task( 'rollup', () =>
@@ -10,7 +12,6 @@ gulp.task( 'rollup', () =>
   ])
   .pipe( sourcemaps.init() )
   .pipe( rollup({
-    allowRealFiles: true,
     entry: './scripts/index.js',
     plugins: [
       babel({
@@ -19,6 +20,11 @@ gulp.task( 'rollup', () =>
       }),
     ],
     format: 'iife'
+  }))
+	.pipe( rename( 'index.min.js' ) )
+	.pipe( uglify().on( 'error', ( e ) =>
+  {
+      console.log( e );
   }))
   .pipe( sourcemaps.write('.') )
   .pipe( gulp.dest( 'public/' ) )
